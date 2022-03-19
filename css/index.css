@@ -6,6 +6,8 @@ html {
   --color-very-dark-blue: #131518;
   --color-dark-blue: #262E38;
   --color-light-grey: #969FAD;
+  
+  /* primary color - orange */
   --color-primary: #FC7614;
 }
 
@@ -41,6 +43,7 @@ button {
   color: white;
   font-weight: 700;
   letter-spacing: 0.12rem;
+  text-transform: uppercase;
   padding: 15px 0;
   border: none;
   border-radius: 25px;
@@ -51,6 +54,12 @@ button {
 button:hover {
   background: white;
   color: var(--color-primary)
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .container {
@@ -81,4 +90,8 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.rating-radio {
+  background-color: var(--color-dark-blue);
 }

@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Rating Component</title>
   <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <div class="container">
@@ -14,14 +16,39 @@
       <div class="icon">
         <img src="images/icon-star.svg" alt="">
       </div>
+      
       <div>
         <h1>How did we do?</h1>
         <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
       </div>
-      <form>
-        <button type="submit">SUBMIT</button>
+      
+      <form id="form">
+        <div class="radio-item">
+          <input type="radio" name="rating" id="rating-1">
+          <label for="rating-1">1</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="rating" id="rating-2">
+          <label for="rating-2">2</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="rating" id="rating-3">
+          <label for="rating-3">3</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="rating" id="rating-4">
+          <label for="rating-4">4</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" name="rating" id="rating-5">
+          <label for="rating-5">5</label>
+        </div>
       </form>
+
+      <button type="submit" form="form">Submit</button>
     </div>
   </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
