@@ -2,10 +2,11 @@
 
 /* todo: blending modes, relative units, logical units, overflow */
 
-html {
+:root {
   --color-very-dark-blue: #131518;
   --color-dark-blue: #262E38;
   --color-light-grey: #969FAD;
+  --color-medium-grey: #7C8798;
   
   /* primary color - orange */
   --color-primary: #FC7614;
@@ -15,83 +16,125 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  cursor: default;
+  user-select: none;
 }
 
 body {
   font-family: 'Overpass', sans-serif;
 }
 
-h1 {
+form {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-700 {
   font-weight: 700;
   font-size: 1.75rem;
   line-height: 1.25;
   color: white;
-  cursor: default;
-  user-select: none;
+  margin-bottom: 10px;
 }
 
-p {
+.text-400 {
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-light-grey);
-  cursor: default;
-  user-select: none;
 }
 
-button {
-  background: var(--color-primary);
-  color: white;
-  font-weight: 700;
-  letter-spacing: 0.12rem;
-  text-transform: uppercase;
+/* containers */
+.container {
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-very-dark-blue);
+}
+
+.main {
+  background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+  width: 410px;
+  border-radius: 30px;
+  padding: 30px;
+  justify-content: space-between;
+  row-gap: 30px;
+}
+
+/* logo */
+.logo {
+  align-self: flex-start;
+  background: var(--color-dark-blue);
+  padding: 16px;
+  border-radius: 50%;
+}
+
+/* button */
+.btn {
   padding: 15px 0;
   border: none;
   border-radius: 25px;
   width: 100%;
   cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
 }
 
-button:hover {
+.btn:hover {
   background: white;
   color: var(--color-primary)
 }
 
-form {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-  background: var(--color-very-dark-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* radio */
+.radio {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* padding fixes click not selected issue */
+  padding: 10px;
 }
 
-.rating-component {
-  background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
-  max-width: 410px;
-  border-radius: 30px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 30px;
+.radio > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
 }
 
-.icon {
-  align-self: flex-start;
+.radio > label {
   background: var(--color-dark-blue);
-  padding: 16px;
+  color: var(--color-light-grey);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.rating-radio {
-  background-color: var(--color-dark-blue);
+.radio > label:not(.selected):hover {
+  background: var(--color-medium-grey);
+  color: white;
+}
+
+/* need .radio for selectivity */
+.radio .selected {
+  background: var(--color-primary);
+  color: white;
 }
