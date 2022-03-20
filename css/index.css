@@ -69,7 +69,7 @@ form {
   border-radius: 50%;
 }
 
-/* button */
+/* buttons */
 .btn {
   padding: 15px 0;
   border: none;
@@ -91,8 +91,16 @@ form {
   color: white;
 }
 
-/* radio */
-.radio {
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 1px solid white;
+}
+
+/* ratings */
+.rating {
   display: inline-block;
   position: relative;
   width: 50px;
@@ -102,7 +110,7 @@ form {
   padding: 10px;
 }
 
-.radio > input {
+input {
   position: absolute;
   top: 0;
   left: 0;
@@ -112,7 +120,11 @@ form {
   opacity: 0;
 }
 
-.radio > label {
+input:focus {
+  outline: none;
+}
+
+label {
   background: var(--color-dark-blue);
   color: var(--color-light-grey);
   position: absolute;
@@ -128,13 +140,17 @@ form {
   z-index: 1;
 }
 
-.radio > label:not(.selected):hover {
+/* :where(label, .rating, input):focus {
+  outline: 1px solid white;
+} */
+
+label:not(.selected):hover {
   background: var(--color-medium-grey);
   color: white;
 }
 
 /* need .radio for selectivity */
-.radio .selected {
+.selected {
   background: var(--color-primary);
   color: white;
 }
