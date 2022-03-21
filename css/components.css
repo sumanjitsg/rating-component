@@ -1,0 +1,97 @@
+/* containers */
+.viewport {
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-very-dark-blue);
+}
+
+.box {
+  background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
+  width: 410px;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.circle {
+  background: var(--color-dark-blue);
+  padding: 16px;
+  border-radius: 50%;
+}
+
+.line {
+  background: var(--color-dark-blue);
+  line-height: 1;
+  padding-block-start: 2.2%;
+  padding-block-end: 1.2%;
+  padding-inline: 20px;
+  border-radius: 25px;
+}
+
+/* buttons */
+.btn {
+  padding: 15px 0;
+  border: none;
+  border-radius: 25px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: var(--color-orange);
+  color: white;
+}
+
+.btn:hover {
+  background: white;
+  color: var(--color-orange)
+}
+
+/* ratings */
+.rating {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* padding fixes click not selected issue */
+  padding: 10px;
+}
+
+.rating-radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.rating-label {
+  background: var(--color-dark-blue);
+  color: var(--color-light-grey);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.selected {
+  background: var(--color-orange);
+  color: white;
+}
+
+.rating-label:not(.selected):hover {
+  background: var(--color-medium-grey);
+  color: white;
+}

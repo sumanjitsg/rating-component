@@ -2,8 +2,16 @@ const form = document.querySelector('form');
 let currentRating = document.querySelector('.selected');
 
 function handleSubmit(e) {
-  console.log(e);
   e.preventDefault();
+
+  const formData = new FormData(form);
+  const rating = formData.get('rating');
+
+  window.sessionStorage.setItem('rating', rating);
+
+  // rating doesn't reset to 5 on reload. resets on hard reload (browser caching?)
+
+  window.location.replace('thankyou.html');
 }
 
 function setRating({ target }) {
