@@ -44,9 +44,14 @@
   color: white;
 }
 
+.btn:focus-visible {
+  outline: 1px solid;
+}
+
 .btn:hover {
   background: white;
-  color: var(--color-orange)
+  color: var(--color-orange);
+  outline: none;
 }
 
 /* ratings */
@@ -86,12 +91,16 @@
   z-index: 1;
 }
 
-.selected {
+.rating-radio:not(:checked) + .rating-label:hover {
+  background: var(--color-medium-grey);
+  color: white;
+}
+
+.rating-radio:checked + .rating-label {
   background: var(--color-orange);
   color: white;
 }
 
-.rating-label:not(.selected):hover {
-  background: var(--color-medium-grey);
-  color: white;
+.rating-radio:focus-visible + .rating-label {
+  outline: 1px solid;
 }
