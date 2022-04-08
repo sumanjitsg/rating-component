@@ -7,7 +7,7 @@
 
 .box {
   background: radial-gradient(98.96% 98.96% at 50% 0%, #232A34 0%, #181E27 100%);
-  width: 410px;
+  width: min(90%, 410px);
   border-radius: 30px;
   padding: 30px;
 }
@@ -56,10 +56,11 @@
 
 /* ratings */
 .rating {
+  --rating-diameter: 3rem;
   display: inline-block;
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: var(--rating-diameter);
+  height: var(--rating-diameter);
   border-radius: 50%;
   /* padding fixes click not selected issue */
   padding: 10px;
@@ -91,16 +92,16 @@
   z-index: 1;
 }
 
-.rating-radio:not(:checked) + .rating-label:hover {
+.rating-radio:not(:checked)+.rating-label:hover {
   background: var(--color-medium-grey);
   color: white;
 }
 
-.rating-radio:checked + .rating-label {
+.rating-radio:checked+.rating-label {
   background: var(--color-orange);
   color: white;
 }
 
-.rating-radio:focus-visible + .rating-label {
+.rating-radio:focus-visible+.rating-label {
   outline: 1px solid;
 }
