@@ -1,4 +1,7 @@
 // todo - CORS policy to restrict opening this page only from feedback page
+import '../css/style.css';
+import '../css/utilities.css';
+import '../css/components.css';
 
 const ratingContainer = document.querySelector('.line > p');
 const rating = window.sessionStorage.getItem('rating');

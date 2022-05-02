@@ -1,3 +1,9 @@
+// import '../assets/favicon-32x32.png';
+
+import '../css/style.css';
+import '../css/utilities.css';
+import '../css/components.css';
+
 const form = document.querySelector('form');
 let currentRating = document.querySelector('.selected');
 

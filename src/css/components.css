@@ -92,16 +92,16 @@
   z-index: 1;
 }
 
-.rating-radio:not(:checked)+.rating-label:hover {
+.rating-radio:not(:checked) + .rating-label:hover {
   background: var(--color-medium-grey);
   color: white;
 }
 
-.rating-radio:checked+.rating-label {
+.rating-radio:checked + .rating-label {
   background: var(--color-orange);
   color: white;
 }
 
-.rating-radio:focus-visible+.rating-label {
+.rating-radio:focus-visible + .rating-label {
   outline: 1px solid;
 }
