@@ -6,8 +6,12 @@ const SRC_PATH = path.resolve(__dirname, 'src');
 const common = {
   context: SRC_PATH,
   entry: {
-    index: './js/index.js',
-    thankyou: './js/thankyou.js',
+    index: {
+      import: './js/index.js',
+    },
+    thankyou: {
+      import: './js/thankyou.js',
+    },
   },
   output: {
     path: DIST_PATH,
