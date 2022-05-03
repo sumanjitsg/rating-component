@@ -1,38 +1,36 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
+const { common } = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
+  output: {
+    filename: 'js/[name].[contenthash].bundle.js',
+    assetModuleFilename: 'assets/[name].[contenthash][ext]',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [ "style-loader", "css-loader" ],
+      },
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.[contenthash].html',
+      template: './index.html',
+      chunks: [ 'index' ],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'thankyou.[contenthash].html',
+      template: './thankyou.html',
+      chunks: [ 'thankyou' ],
+    }),
+  ],
+  devServer: {
+    port: 3030,
+    compress: true,
+  },
 });
-
-// new CopyPlugin({
-//   patterns: [
-//     // {
-//     //   from: './css',
-//     //   to: 'css',
-//     // },
-//     // {
-//     //   from: './assets',
-//     //   to: 'assets',
-//     // },
-//     {
-//       from: './favicon-32x32.png'
-//     }
-//   ]
-// }),
-
-// new HtmlWebpackTagsPlugin({
-//   links: [
-//     // {
-//     //   path: 'css',
-//     //   glob: '*.css',
-//     //   globPath: './src/css/',
-//     // },
-//     {
-//       path: 'favicon-32x32.png',
-//       attributes: {
-//         rel: 'icon',
-//       }
-//     }
-//   ],
-// }),;

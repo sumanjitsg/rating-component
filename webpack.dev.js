@@ -1,16 +1,36 @@
-const path = require('path');
-const { merge } = require('webpack-merge');
-const { DIST_PATH, config } = require('./webpack.common');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = merge(config, {
+const { merge } = require('webpack-merge');
+const { common } = require('./webpack.common');
+
+module.exports = merge(common, {
   mode: 'development',
+  output: {
+    filename: 'js/[name].bundle.js',
+    assetModuleFilename: 'assets/[name][ext]',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [ "style-loader", "css-loader" ],
+      },
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './index.html',
+      chunks: [ 'index' ],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'thankyou.html',
+      template: './thankyou.html',
+      chunks: [ 'thankyou' ],
+    }),
+  ],
   devServer: {
-    static: {
-      directory: DIST_PATH,
-    },
-    compress: true,
     port: 3000,
-    open: true,
-    hot: true,
+    compress: true,
   },
 });

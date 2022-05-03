@@ -1,12 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 
 const DIST_PATH = path.resolve(__dirname, 'dist');
 const SRC_PATH = path.resolve(__dirname, 'src');
 
-const config = {
+const common = {
   context: SRC_PATH,
   entry: {
     index: './js/index.js',
@@ -14,54 +11,31 @@ const config = {
   },
   output: {
     path: DIST_PATH,
-    filename: 'js/[name].js',
-    assetModuleFilename: 'assets/[name][ext]',
     clean: true,
   },
   module: {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        use: [ 'html-loader' ],
       },
       {
-        test: /\.css$/,
-        use: [ "style-loader", "css-loader" ],
-      },
-      {
-        test: /\.svg$/i,
+        test: /\.(svg|png)$/i,
         type: 'asset/resource',
       },
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      chunks: [ 'index' ],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'thankyou.html',
-      template: './thankyou.html',
-      chunks: [ 'thankyou' ],
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: './favicon-32x32.png'
-        }
-      ]
-    }),
-    new HtmlWebpackTagsPlugin({
-      links: [
-        {
-          path: 'favicon-32x32.png',
-          attributes: {
-            rel: 'icon',
-          }
-        }
-      ],
-    }),
-  ]
+  devServer: {
+    static: {
+      directory: DIST_PATH,
+    },
+    open: {
+      app: {
+        name: 'chrome',
+      },
+    },
+    hot: true,
+  },
 };
 
-module.exports = { DIST_PATH, config };
+module.exports = { common };
