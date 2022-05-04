@@ -1,17 +1,13 @@
 const path = require('path');
 
-const DIST_PATH = path.resolve(__dirname, 'dist');
-const SRC_PATH = path.resolve(__dirname, 'src');
+const DIST_PATH = path.resolve(__dirname, '../dist');
+const SRC_PATH = path.resolve(__dirname, '../src');
 
 const common = {
   context: SRC_PATH,
   entry: {
-    index: {
-      import: './js/index.js',
-    },
-    thankyou: {
-      import: './js/thankyou.js',
-    },
+    index: './js/index.js',
+    thankyou: './js/thankyou.js',
   },
   output: {
     path: DIST_PATH,
@@ -39,6 +35,7 @@ const common = {
       },
     },
     hot: true,
+    compress: true,
   },
 };
 

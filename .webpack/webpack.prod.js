@@ -32,7 +32,7 @@ module.exports = merge(common, {
       chunks: [ 'thankyou' ],
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.[contenthash].css'
+      filename: '[name].[contenthash].css'
     }),
     new ImageMinimizerPlugin({
       minimizer: {
@@ -46,6 +46,16 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      },
+    },
     minimizer: [
       `...`,
       new CssMinimizerPlugin(),
@@ -53,6 +63,5 @@ module.exports = merge(common, {
   },
   devServer: {
     port: 3030,
-    compress: true,
   },
 });
