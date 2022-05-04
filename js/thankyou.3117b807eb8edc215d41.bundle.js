@@ -1,1 +1,0 @@
-(()=>{"use strict";const e=document.querySelector(".line > p"),t=window.sessionStorage.getItem("rating");null!==t&&(e.textContent=`You selected ${t} out of 5`,e.parentElement.classList.remove("hidden"))})();

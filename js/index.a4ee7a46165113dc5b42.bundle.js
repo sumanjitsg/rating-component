@@ -1,1 +1,0 @@
-(()=>{"use strict";const e=document.querySelector("form");document.querySelector(".selected"),e.addEventListener("submit",(function(t){t.preventDefault();const n=new FormData(e).get("rating");window.sessionStorage.setItem("rating",n),window.location.replace("thankyou.html")}))})();
