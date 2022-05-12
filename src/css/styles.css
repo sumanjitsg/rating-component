@@ -200,8 +200,6 @@ image {
   height: 100%;
   border-radius: 50%;
   opacity: 0;
-  z-index: 1;
-  cursor: pointer;
 }
 
 .rating__label {
@@ -216,9 +214,11 @@ image {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.ratin__radio:not(:checked) + .rating__label:hover {
+.rating__radio:not(:checked) + .rating__label:hover {
   background: var(--color-medium-grey);
   color: white;
 }
