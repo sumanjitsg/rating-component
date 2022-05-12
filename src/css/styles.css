@@ -169,7 +169,7 @@ image {
   text-transform: uppercase;
 }
 
-.btn-primary {
+.btn--primary {
   background: var(--color-orange);
   color: white;
 }
