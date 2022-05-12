@@ -17,44 +17,61 @@
   </head>
 
   <body>
-    <div class='viewport flex flex-items-center flex-content-center'>
-      <main class='box flex flex-col flex-gap-30'>
-        <picture class='circle flex flex-self-start'>
-          <img src='assets/icon-star.svg' alt=''>
-        </picture>
-        <section>
-          <h1 class='text-xl clr-white'>
-            How did we do?
-          </h1>
-          <p class='text-m clr-light-grey'>
-            Please let us know how we did with your support request. All feedback is appreciated to
-            help us
-            improve our offering!
-          </p>
-        </section>
-        <form id='form' class='flex flex-items-center flex-content-btw'>
-          <div class='rating'>
-            <input class='rating-radio' type='radio' name='rating' id='rating-1' value='1'>
-            <label class='rating-label' for='rating-1'>1</label>
-          </div>
-          <div class='rating'>
-            <input class='rating-radio' type='radio' name='rating' id='rating-2' value='2'>
-            <label class='rating-label' for='rating-2'>2</label>
-          </div>
-          <div class='rating'>
-            <input class='rating-radio' type='radio' name='rating' id='rating-3' value='3'>
-            <label class='rating-label' for='rating-3'>3</label>
-          </div>
-          <div class='rating'>
-            <input class='rating-radio' type='radio' name='rating' id='rating-4' value='4'>
-            <label class='rating-label' for='rating-4'>4</label>
-          </div>
-          <div class='rating'>
-            <input class='rating-radio' type='radio' name='rating' id='rating-5' value='5' checked>
-            <label class='rating-label' for='rating-5'>5</label>
+    <div class='container flex flex-items-center flex-content-center'>
+      <main class='box'>
+        <!-- Form -->
+        <form id='form'>
+          <div class='flex flex-col'>
+            <!-- Logo -->
+            <div class='circle flex flex-self-start'>
+              <img src='assets/icon-star.svg' alt='star logo'>
+            </div>
+
+            <!-- Heading -->
+            <h1 class='text-xl clr-white margin-top-16'>
+              How did we do?
+            </h1>
+
+            <!-- Description -->
+            <p class='clr-light-grey margin-top-10'>
+              Please let us know how we did with your support request. All feedback is appreciated to
+              help us
+              improve our offering!
+            </p>
+
+            <!-- Fieldset: select rating -->
+            <fieldset class='no-border'>
+              <legend class='sr-only'>Select Rating</legend>
+              <div class='flex flex-items-center flex-content-btw  margin-top-24'>
+                <div class='rating'>
+                  <input class='rating__radio' type='radio' name='rating' id='rating-1' value='1'>
+                  <label class='rating__label' for='rating-1'>1</label>
+                </div>
+                <div class='rating'>
+                  <input class='rating__radio' type='radio' name='rating' id='rating-2' value='2'>
+                  <label class='rating__label' for='rating-2'>2</label>
+                </div>
+                <div class='rating'>
+                  <input class='rating__radio' type='radio' name='rating' id='rating-3' value='3'>
+                  <label class='rating__label' for='rating-3'>3</label>
+                </div>
+                <div class='rating'>
+                  <input class='rating__radio' type='radio' name='rating' id='rating-4' value='4'>
+                  <label class='rating__label' for='rating-4'>4</label>
+                </div>
+                <div class='rating'>
+                  <input class='rating__radio' type='radio' name='rating' id='rating-5' value='5' checked>
+                  <label class='rating__label' for='rating-5'>5</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Submit -->
+            <button class='btn btn-primary margin-top-24' type='submit' form='form'>
+              Submit
+            </button>
           </div>
         </form>
-        <button class='btn btn-primary' type='submit' form='form'>Submit</button>
       </main>
     </div>
   </body>

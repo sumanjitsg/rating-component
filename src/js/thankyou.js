@@ -1,13 +1,12 @@
-// todo - CORS policy to restrict opening this page only from feedback page
-import '../css/style.css';
-import '../css/utilities.css';
-import '../css/components.css';
+import '../thankyou.html';
+import '../css/styles.css';
 
-const ratingContainer = document.querySelector('.line > p');
+// get rating from session storage
+const ratingContainer = document.querySelector('.row > p');
 const rating = window.sessionStorage.getItem('rating');
 
-// only when rating set in storage (possibly from feedback form page)
+// show rating if not null
 if (rating !== null) {
-  ratingContainer.textContent = `You selected ${rating} out of 5`;
+  ratingContainer.append(`You selected ${rating} out of 5`);
   ratingContainer.parentElement.classList.remove('hidden');
 }
