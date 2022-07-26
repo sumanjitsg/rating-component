@@ -33,7 +33,8 @@ body {
   line-height: 1.6;
 }
 
-image {
+img {
+  display: block;
   width: 100%;
 }
 
