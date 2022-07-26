@@ -6,19 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:build": "webpack --config .webpack/webpack.dev.js --progress",
-    "start": "webpack serve --config .webpack/webpack.dev.js",
+    "dev:serve": "webpack serve --config .webpack/webpack.dev.js",
     "dev:analyze": "webpack --config .webpack/webpack.dev.js --analyze",
     "prod:build": "webpack --config .webpack/webpack.prod.js",
     "prod:serve": "webpack serve --config .webpack/webpack.prod.js",
     "prod:analyze": "webpack --config .webpack/webpack.prod.js --analyze"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sumanjitsg/rating-component.git"
-  },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/sumanjitsg/rating-component#readme",
   "devDependencies": {
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
