@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
-    <link href='assets/favicon-32x32.png' rel='icon'>
+    <link href="assets/favicon-32x32.png" rel="icon" />
 
     <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Thank You</title>
   </head>
 
   <body>
-    <div class="container flex flex-items-center flex-content-center">
-      <main class='box flex flex-col flex-items-center'>
+    <div class="viewport-container flex flex-items-center flex-justify-center">
+      <main class="content-container flex flex-col flex-items-center">
         <!-- Illustration -->
-        <div class='margin-top-16'>
-          <img src='assets/illustration-thank-you.svg' alt='thank you illustration'>
+        <div class="mt-4">
+          <img
+            src="assets/illustration-thank-you.svg"
+            alt="thank you illustration"
+          />
         </div>
 
         <!-- Show rating -->
-        <div class='row hidden margin-top-24'>
-          <p class='clr-primary'></p>
-        </div>
-        <div class='margin-top-24'>
+        <p
+          class="selected-rating-text text-primary mt-6 hidden"
+          data-selected-rating-text
+        ></p>
+        <div class="mt-6">
           <!-- Heading -->
-          <h2 class='text-xl text-center clr-white'>
-            Thank you!
-          </h2>
+          <h2 class="text-xl text-center text-white">Thank you!</h2>
 
           <!-- Text -->
-          <p class='text-center clr-light-grey margin-top-10'>
-            We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get
-            in
-            touch!
+          <p class="text-center text-light-grey mt-2.5">
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don’t hesitate to get in touch!
           </p>
         </div>
       </main>
     </div>
   </body>
-
 </html>

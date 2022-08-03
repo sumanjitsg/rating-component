@@ -1,12 +1,15 @@
-import '../thankyou.html';
-import '../css/styles.css';
+import "../thankyou.html";
+import "../css/styles.css";
+
+const selectedRatingText = document.querySelector(
+  "[data-selected-rating-text]"
+);
 
 // get rating from session storage
-const ratingContainer = document.querySelector('.row > p');
-const rating = window.sessionStorage.getItem('rating');
+const rating = window.sessionStorage.getItem("rating");
 
-// show rating if not null
+// display rating if not null
 if (rating !== null) {
-  ratingContainer.append(`You selected ${rating} out of 5`);
-  ratingContainer.parentElement.classList.remove('hidden');
+  selectedRatingText.append(`You selected ${rating} out of 5`);
+  selectedRatingText.classList.remove("hidden");
 }
