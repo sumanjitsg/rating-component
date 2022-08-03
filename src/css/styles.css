@@ -8,7 +8,7 @@
   font-size: 75%;
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 350px) {
   :root {
     font-size: 90%;
   }
