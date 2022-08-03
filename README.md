@@ -28,5 +28,4 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://github.com/sumanjitsg/rating-component
 - Live Site URL: https://sumanjitsg.github.io/rating-component/
