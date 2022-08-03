@@ -31,7 +31,8 @@ Users should be able to:
 
 ### Design
 
-![](./design/rating-component.jpg)
+![rating component](./design/rating-component.jpg)
+![thank you state](./design/thank-you-state.jpg)
 
 ### Links
 
