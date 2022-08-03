@@ -1,4 +1,4 @@
-[![CI](https://github.com/sumanjitsg/rating-component/actions/workflows/ci.yml/badge.svg)](https://github.com/sumanjitsg/rating-component/actions/workflows/ci.yml)
+[![CI](https://github.com/sumanjitsg/rating-component/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sumanjitsg/rating-component/actions/workflows/ci.yml)
 
 # Interactive rating component
 
