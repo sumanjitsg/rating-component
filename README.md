@@ -8,7 +8,6 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Design](#design)
   - [Links](#links)
 
 ## Overview
@@ -21,10 +20,6 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Select and submit a number rating
 - See the "Thank you" card state after submitting a rating
-
-### Design
-
-![rating component](./design/rating-component.jpg)
 
 ### Links
 
