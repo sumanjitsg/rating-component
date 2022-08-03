@@ -88,6 +88,10 @@ img {
   margin-top: 0.625rem;
 }
 
+.border-none {
+  border: none;
+}
+
 /* colors */
 .text-primary {
   color: var(--clr-orange);
@@ -127,10 +131,6 @@ img {
   margin: -1px;
   border-width: 0;
   overflow: hidden;
-}
-
-.border-none {
-  border: none;
 }
 
 /* ------------------------------ *
