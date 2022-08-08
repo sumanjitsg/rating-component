@@ -4,19 +4,36 @@ import "@testing-library/jest-dom";
 
 let screen: HTMLElement;
 
-beforeAll(() => {
+// todo: clean jsdom handle after each test. required?
+
+beforeAll(async () => {
   const options = {
     contentType: "text/html",
   };
 
-  return JSDOM.fromFile("src/index.html", options).then((dom) => {
-    screen = dom.window.document.body;
-  });
+  const dom = await JSDOM.fromFile("src/index.html", options);
+
+  screen = dom.window.document.body;
 });
 
-test("Submit button should be in document", () => {
-  const submitButton = getByRole(screen, "button", {
-    name: /submit/i,
+describe("Submit button", () => {
+  test("should be in document", () => {
+    const submitButton = getByRole(screen, "button", {
+      name: /submit/i,
+    });
+
+    expect(submitButton).toBeInTheDocument();
   });
-  expect(submitButton).toBeInTheDocument();
+
+  test("should be disabled", () => {
+    const submitButton = getByRole(screen, "button", {
+      name: /submit/i,
+    });
+
+    expect(submitButton).toBeDisabled();
+  });
+
+  test.todo("should not receive focus");
+  test.todo("should not call its click event handler on clicked");
+  test.todo("should not dispatch submit event to the form on clicked");
 });
