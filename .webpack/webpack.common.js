@@ -1,14 +1,13 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const DIST_PATH = path.resolve(__dirname, '../dist');
-const SRC_PATH = path.resolve(__dirname, '../src');
+const SRC_PATH = path.resolve("src");
+const DIST_PATH = path.resolve("dist");
 
 const common = {
-  context: SRC_PATH,
+  context: path.join(SRC_PATH, "app"),
   entry: {
-    index: './js/index.js',
-    thankyou: './js/thankyou.js',
+    index: "./index.ts",
   },
   output: {
     path: DIST_PATH,
@@ -17,25 +16,28 @@ const common = {
   module: {
     rules: [
       {
+        test: /\.ts$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
         test: /\.html$/,
-        use: [ 'html-loader' ],
+        use: ["html-loader"],
       },
       {
         test: /\.(svg|png)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
-    ]
+    ],
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
+    modules: [SRC_PATH, "node_modules"],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './index.html',
-      chunks: [ 'index' ],
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'thankyou.html',
-      template: './thankyou.html',
-      chunks: [ 'thankyou' ],
+      template: path.join(SRC_PATH, "index.html"),
+      filename: "index.html",
     }),
   ],
   devServer: {
@@ -44,7 +46,7 @@ const common = {
     },
     open: {
       app: {
-        name: 'chrome',
+        name: "chrome",
       },
     },
     hot: true,
