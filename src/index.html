@@ -20,87 +20,106 @@
 
   <body>
     <main class="viewport-container flex flex-items-center flex-justify-center">
-      <!-- Form -->
-      <form
-        class="flex flex-col flex-justify-between content-container"
-        data-rating-form
-      >
-        <!-- Logo -->
-        <div class="logo-container flex flex-self-start">
-          <img src="assets/icon-star.svg" alt="" />
-        </div>
+      <div class="content-container" data-content-container>
+        <!-- Form -->
+        <form class="flex flex-col flex-justify-between" data-rating-form>
+          <!-- Logo -->
+          <div class="logo-container flex flex-self-start">
+            <img src="assets/icon-star.svg" alt="" />
+          </div>
+          <!-- Heading -->
+          <div>
+            <h1 class="text-xl text-white mt-4">How did we do?</h1>
+            <!-- Description -->
+            <p class="text-light-grey mt-2.5">
+              Please let us know how we did with your support request. All
+              feedback is appreciated to help us improve our offering!
+            </p>
+          </div>
+          <!-- Fieldset: select rating -->
+          <fieldset class="border-none">
+            <legend class="sr-only">Select Rating</legend>
+            <div class="flex flex-items-center flex-justify-between mt-6">
+              <div class="rating">
+                <input
+                  class="rating__radio"
+                  type="radio"
+                  name="rating"
+                  id="rating-1"
+                  value="1"
+                />
+                <label class="rating__label" for="rating-1">1</label>
+              </div>
+              <div class="rating">
+                <input
+                  class="rating__radio"
+                  type="radio"
+                  name="rating"
+                  id="rating-2"
+                  value="2"
+                />
+                <label class="rating__label" for="rating-2">2</label>
+              </div>
+              <div class="rating">
+                <input
+                  class="rating__radio"
+                  type="radio"
+                  name="rating"
+                  id="rating-3"
+                  value="3"
+                />
+                <label class="rating__label" for="rating-3">3</label>
+              </div>
+              <div class="rating">
+                <input
+                  class="rating__radio"
+                  type="radio"
+                  name="rating"
+                  id="rating-4"
+                  value="4"
+                />
+                <label class="rating__label" for="rating-4">4</label>
+              </div>
+              <div class="rating">
+                <input
+                  class="rating__radio"
+                  type="radio"
+                  name="rating"
+                  id="rating-5"
+                  value="5"
+                />
+                <label class="rating__label" for="rating-5">5</label>
+              </div>
+            </div>
+          </fieldset>
+          <!-- Submit -->
+          <button class="btn btn--primary mt-6" type="submit">Submit</button>
+        </form>
+        <template data-thankyou-template>
+          <div class="flex flex-col flex-items-center">
+            <!-- Illustration -->
+            <div class="mt-4">
+              <img src="assets/illustration-thank-you.svg" alt="" />
+            </div>
 
-        <!-- Heading -->
-        <div>
-          <h1 class="text-xl text-white mt-4">How did we do?</h1>
+            <!-- Show rating -->
+            <p
+              class="selected-rating-text text-primary mt-6 hidden"
+              data-selected-rating-text
+            ></p>
+            <div class="mt-6">
+              <!-- Heading -->
+              <h2 class="text-xl text-center text-white">Thank you!</h2>
 
-          <!-- Description -->
-          <p class="text-light-grey mt-2.5">
-            Please let us know how we did with your support request. All
-            feedback is appreciated to help us improve our offering!
-          </p>
-        </div>
-
-        <!-- Fieldset: select rating -->
-        <fieldset class="border-none">
-          <legend class="sr-only">Select Rating</legend>
-          <div class="flex flex-items-center flex-justify-between mt-6">
-            <div class="rating">
-              <input
-                class="rating__radio"
-                type="radio"
-                name="rating"
-                id="rating-1"
-                value="1"
-              />
-              <label class="rating__label" for="rating-1">1</label>
-            </div>
-            <div class="rating">
-              <input
-                class="rating__radio"
-                type="radio"
-                name="rating"
-                id="rating-2"
-                value="2"
-              />
-              <label class="rating__label" for="rating-2">2</label>
-            </div>
-            <div class="rating">
-              <input
-                class="rating__radio"
-                type="radio"
-                name="rating"
-                id="rating-3"
-                value="3"
-              />
-              <label class="rating__label" for="rating-3">3</label>
-            </div>
-            <div class="rating">
-              <input
-                class="rating__radio"
-                type="radio"
-                name="rating"
-                id="rating-4"
-                value="4"
-              />
-              <label class="rating__label" for="rating-4">4</label>
-            </div>
-            <div class="rating">
-              <input
-                class="rating__radio"
-                type="radio"
-                name="rating"
-                id="rating-5"
-                value="5"
-              />
-              <label class="rating__label" for="rating-5">5</label>
+              <!-- Text -->
+              <p class="text-center text-light-grey mt-2.5">
+                We appreciate you taking the time to give a rating. If you ever
+                need more support, don’t hesitate to get in touch!
+              </p>
             </div>
           </div>
-        </fieldset>
-
-        <!-- Submit -->
-        <button class="btn btn--primary mt-6" type="submit">Submit</button>
-      </form>
+        </template>
+      </div>
     </main>
   </body>
 </html>
