@@ -1,5 +1,5 @@
-import "../index.html";
-import "../css/styles.css";
+import "index.html";
+import "styles.css";
 
 function nullCheckedQuerySelector(
   container: Document | DocumentFragment | Element,

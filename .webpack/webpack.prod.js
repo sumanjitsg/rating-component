@@ -1,31 +1,29 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-const { merge } = require('webpack-merge');
-const { common } = require('./webpack.common');
+const { merge } = require("webpack-merge");
+const { common } = require("./webpack.common");
 
 module.exports = merge(common, {
-  mode: 'production',
+  mode: "production",
   output: {
-    filename: 'js/[name].[contenthash].bundle.js',
-    assetModuleFilename: 'assets/[name].[contenthash][ext]',
+    filename: "[name].[contenthash].bundle.js",
+    assetModuleFilename: "assets/[name].[contenthash][ext]",
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
-    ]
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
+      filename: "[name].[contenthash].css",
     }),
   ],
+  // todo: do we need split chunks anymore? thank you chunk removed
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -37,10 +35,7 @@ module.exports = merge(common, {
         },
       },
     },
-    minimizer: [
-      `...`,
-      new CssMinimizerPlugin(),
-    ],
+    minimizer: [`...`, new CssMinimizerPlugin()],
   },
   devServer: {
     port: 3030,

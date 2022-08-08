@@ -5,9 +5,9 @@ const SRC_PATH = path.resolve("src");
 const DIST_PATH = path.resolve("dist");
 
 const common = {
-  context: path.join(SRC_PATH, "app"),
+  context: path.join(SRC_PATH),
   entry: {
-    index: "./index.ts",
+    app: "./app.ts",
   },
   output: {
     path: DIST_PATH,
