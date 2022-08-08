@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    // todo: do we need an outDir?
-    "outDir": "dist",
+    "allowJs": true,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "module": "es6",
     "target": "es6",
-    "allowJs": true,
-    "strict": true,
     "moduleResolution": "node",
+    "outDir": "dist",
     "baseUrl": "src"
   }
 }
