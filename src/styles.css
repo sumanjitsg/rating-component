@@ -194,6 +194,12 @@ img {
   color: var(--clr-orange);
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--clr-medium-grey);
+  color: var(--clr-dark-blue);
+}
+
 /* rating */
 .rating {
   display: inline-block;
