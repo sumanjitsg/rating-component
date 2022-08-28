@@ -2,6 +2,14 @@
 
 # Interactive rating component
 
+## Desktop Preview
+
+![Design preview for the Interactive rating component coding challenge](./design/desktop-preview.jpg)
+
+## Desktop Thank You State
+
+![Design preview for the Interactive rating component coding challenge](./design/desktop-thank-you-state.jpg)
+
 This is a solution to the [Interactive rating component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI).
 
 ## Table of contents
