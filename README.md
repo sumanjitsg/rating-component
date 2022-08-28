@@ -27,5 +27,5 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://www.frontendmentor.io/solutions/interactive-rating-component-using-html-css-js-and-webpack-VkI-xoKXDU
 - Live Site URL: https://sumanjitsg.github.io/rating-component/
+- Solution URL: https://www.frontendmentor.io/solutions/interactive-rating-component-using-html-css-js-and-webpack-VkI-xoKXDU
