@@ -1,5 +1,8 @@
 name: CI
 
+# todo: add lints.
+# todo: add tests. tests may not require build. install dependencies and start tests.
+
 on:
   push:
     branches: [main]
