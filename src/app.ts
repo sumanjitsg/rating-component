@@ -1,49 +1,15 @@
 import "index.html";
 import "styles.css";
 
-function nullCheckedQuerySelector(
-  container: Document | DocumentFragment | Element,
-  selector: string
-) {
-  const element = container.querySelector(selector);
-
-  if (element === null) {
-    throw new Error(
-      `Selector ${selector} didn't match any element in ${container} tree.`
-    );
-  }
-
-  return element;
-}
-
-function typeCheckedQuerySelector<T extends typeof Element>(
-  container: Document | DocumentFragment | Element,
-  selector: string,
-  type: T
-) {
-  const element = container.querySelector(selector);
-
-  if (!(element instanceof type)) {
-    throw new Error(
-      `Element ${element} matched with ${selector} is not an ${type}.`
-    );
-  }
-
-  return element as InstanceType<typeof type>;
-}
-
-const ratingForm = typeCheckedQuerySelector(
-  document,
-  "[data-rating-form]",
-  HTMLFormElement
-);
+const ratingForm =
+  document.querySelector<HTMLFormElement>("[data-rating-form]");
 
 // event listeners
 ratingForm.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event: SubmitEvent) {
   if (!(event.currentTarget instanceof HTMLFormElement)) {
-    throw new Error("current target not form element!");
+    throw new Error("Current target is not a form element!");
   }
 
   event.preventDefault();
@@ -53,30 +19,22 @@ function handleSubmit(event: SubmitEvent) {
   const rating = formData.get("rating");
 
   // get content container
-  const contentContainerEl = typeCheckedQuerySelector(
-    document,
-    "[data-content-container]",
-    HTMLElement
-  );
+  const contentContainerEl = document.querySelector("[data-content-container]");
 
   // get thankyou template
-  const thankyouTemplate = typeCheckedQuerySelector(
-    document,
-    "[data-thankyou-template]",
-    HTMLTemplateElement
+  const thankyouTemplate = document.querySelector<HTMLTemplateElement>(
+    "[data-thankyou-template]"
   );
 
   // get rating text
-  const selectedRatingText = typeCheckedQuerySelector(
-    thankyouTemplate.content,
-    "[data-selected-rating-text]",
-    HTMLElement
+  const selectedRatingText = thankyouTemplate?.content?.querySelector(
+    "[data-selected-rating-text]"
   );
 
-  selectedRatingText.append(`You selected ${rating} out of 5`);
-  selectedRatingText.classList.remove("hidden");
+  selectedRatingText?.append(`You selected ${rating} out of 5`);
+  selectedRatingText?.classList?.remove("hidden");
 
-  contentContainerEl.replaceChildren(
-    thankyouTemplate.content.firstElementChild!.cloneNode(true)
+  contentContainerEl?.replaceChildren(
+    thankyouTemplate?.content?.firstElementChild?.cloneNode(true)
   );
 }
