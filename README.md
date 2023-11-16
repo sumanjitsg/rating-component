@@ -2,11 +2,7 @@
 
 # Interactive rating component
 
-## Desktop Preview
-
 ![Design preview for the Interactive rating component coding challenge](./design/desktop-preview.jpg)
-
-## Desktop Thank You State
 
 ![Design preview for the Interactive rating component coding challenge](./design/desktop-thank-you-state.jpg)
 
@@ -32,3 +28,4 @@ Users should be able to:
 ### Links
 
 - Live Site URL: https://sumanjitsg.github.io/rating-component/
+- Solution URL: https://www.frontendmentor.io/solutions/interactive-rating-component-using-html-css-js-and-webpack-VkI-xoKXDU
